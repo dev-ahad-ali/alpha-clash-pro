@@ -12,14 +12,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body>
+  <body class="font-poppins">
     <main
       class="bg-[#010313] min-h-screen bg-[url(./images/background.png)] bg-no-repeat bg-center"
     >
       <!-- Home Screen ------------->
-      <section
-        class="home min-h-screen flex justify-center items-center hidden"
-      >
+      <section class="home min-h-screen flex justify-center items-center">
         <div class="text-center space-y-8">
           <h1 class="text-8xl text-white font-anton uppercase">
             Alpha Clash Pro
@@ -100,7 +98,19 @@
         </div>
       </section>
       <!-- Score ---------------->
-      <section class="score"></section>
+      <section
+        class="score flex justify-center items-center min-h-screen hidden"
+      >
+        <div
+          class="text-white text-center space-y-6 bg-[#FFFFFF33] p-4 rounded-lg"
+        >
+          <h1 class="text-8xl">
+            <span class="font-extrabold">Score:</span><span>14</span>
+          </h1>
+          <button class="btn">Play Again</button>
+          <p>Practice will make you a pro</p>
+        </div>
+      </section>
     </main>
 
     <script src="./js/scripts.js"></script>
