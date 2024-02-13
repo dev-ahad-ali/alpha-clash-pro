@@ -17,7 +17,10 @@
       class="bg-[#010313] min-h-screen bg-[url(./images/background.png)] bg-no-repeat bg-center"
     >
       <!-- Home Screen ------------->
-      <section class="home min-h-screen flex justify-center items-center">
+      <section
+        id="home-screen"
+        class="home min-h-screen flex justify-center items-center"
+      >
         <div class="text-center space-y-8">
           <h1 class="text-8xl text-white font-anton uppercase">
             Alpha Clash Pro
@@ -26,6 +29,7 @@
             Unleash Your Keyboard Kung Fu : Press “Enter” to Play
           </p>
           <button
+            onclick="play()"
             class="btn bg-white text-black hover:bg-black hover:text-white"
           >
             Play Now
@@ -33,7 +37,10 @@
         </div>
       </section>
       <!-- PlayGround ---------------->
-      <section class="play-ground flex flex-col gap-20 items-center hidden">
+      <section
+        id="play-ground"
+        class="play-ground flex flex-col gap-20 items-center hidden"
+      >
         <!-- Screen -->
         <div
           class="artboard artboard-horizontal phone-6 border-[20px] rounded-2xl border-[#010313CC] bg-[#FFFFFFB3]"
@@ -113,6 +120,7 @@
       </section>
     </main>
 
+    <script src="./js/utility.js"></script>
     <script src="./js/scripts.js"></script>
   </body>
 </html>
