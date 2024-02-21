@@ -29,6 +29,9 @@ function handleKeyboardButtonPress(event) {
   const currentAlphabetElement = document.getElementById("current-alphabet");
   const currentAlphabet = currentAlphabetElement.innerText.toLocaleLowerCase();
 
+  // Add audio
+  const audio = new Audio();
+
   // check matched or not
   if (playerPressed === currentAlphabet) {
     console.log("point");
@@ -40,6 +43,8 @@ function handleKeyboardButtonPress(event) {
     // const newScore = currentScore + 1;
     // currentScoreElement.innerText = newScore;
 
+    audio.src = "../audio/success.wav";
+    audio.play();
     const currentScore = getScoreLifeValue("current-score");
     const newScore = currentScore + 1;
     setScoreLifeValue("current-score", newScore);
@@ -57,6 +62,8 @@ function handleKeyboardButtonPress(event) {
     // const newLife = currentLife - 1;
     // currentLifeElement.innerText = newLife;
 
+    audio.src = "../audio/error.wav";
+    audio.play();
     const currentLife = getScoreLifeValue("current-life");
     const newLife = currentLife - 1;
     setScoreLifeValue("current-life", newLife);
