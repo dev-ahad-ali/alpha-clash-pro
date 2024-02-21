@@ -16,9 +16,17 @@ function play() {
   setScoreLifeValue("current-life", 5);
   setScoreLifeValue("current-score", 0);
 
+  isGamePlayOn = true;
+
   continueGame();
 }
+// Home screen game bug fix
+let isGamePlayOn = false;
+
 function handleKeyboardButtonPress(event) {
+  if (isGamePlayOn === false) {
+    return;
+  }
   const playerPressed = event.key;
 
   // stop the game if player pressed "Esc"
@@ -86,4 +94,5 @@ function gameOver() {
   //  clear last selected alphabet highlight
   const currentAlphabet = getElementTextById("current-alphabet");
   removeBgById(currentAlphabet);
+  isGamePlayOn = false;
 }
