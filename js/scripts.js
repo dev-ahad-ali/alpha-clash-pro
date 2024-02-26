@@ -101,3 +101,18 @@ function gameOver() {
 
   artBoard.style.background = "linear-gradient(#ffffffb3 100%,red)";
 }
+// Modal
+const modal = document.getElementById("modal-box");
+function modalOpen(event) {
+  if (event.clientY < 20) {
+    modal.classList.remove("hidden");
+  }
+}
+function modalClose() {
+  modal.classList.add("hidden");
+}
+document.body.onmousemove = modalOpen;
+document.getElementById("modal-close").addEventListener("click", modalClose);
+// window.onbeforeunload = function () {
+//   return modalOpen();
+// };
