@@ -39,7 +39,7 @@ function handleKeyboardButtonPress(event) {
 
   // Add audio
   const audio = new Audio();
-
+  const artBoard = document.getElementById("artboard");
   // check matched or not
   if (playerPressed === currentAlphabet) {
     console.log("point");
@@ -74,6 +74,9 @@ function handleKeyboardButtonPress(event) {
     audio.play();
     const currentLife = getScoreLifeValue("current-life");
     const newLife = currentLife - 1;
+
+    const newLifePercentage = (newLife / 5) * 100;
+    artBoard.style.background = `linear-gradient(#ffffffb3 ${newLifePercentage}%,red)`;
     setScoreLifeValue("current-life", newLife);
 
     if (newLife === 0) {
@@ -95,4 +98,6 @@ function gameOver() {
   const currentAlphabet = getElementTextById("current-alphabet");
   removeBgById(currentAlphabet);
   isGamePlayOn = false;
+
+  artBoard.style.background = "linear-gradient(#ffffffb3 100%,red)";
 }
